@@ -1,0 +1,20 @@
+//二分查找
+int search(int* nums, int numsSize, int target){
+int left = 0;
+int right = numsSize - 1;
+while(left <= right)
+{
+    int mid = (left + right)/2;//一定要将求中间下标值的语句写在循环里面！！！！！！！
+    if(target > nums[mid])
+    {
+        left = mid + 1;//此时目标值在中间数据的右边，所以左区间下标变为中间值+1
+    }
+    else if(target < nums[mid])
+    {
+        right = mid - 1;//此时目标值在中间数据的左边，所以右区间下标变为中间值-1
+    }
+    else
+    return mid;//此时在数组中找到目标值，直接返回下标
+}
+return -1;
+}
